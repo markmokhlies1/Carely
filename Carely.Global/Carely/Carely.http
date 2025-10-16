@@ -1,0 +1,6 @@
+@Carely_HostAddress = http://localhost:5032
+
+GET {{Carely_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
