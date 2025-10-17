@@ -9,6 +9,8 @@ namespace Carely.Data
     {
         public DbSet<Mother> Mothers => Set<Mother>();
         public DbSet<Medication> Medications => Set<Medication>();
+        public DbSet<Admin> Admins => Set<Admin>();
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

@@ -169,3 +169,9 @@ D:\GP\Carely.Global\Carely\obj\Debug\net8.0\refint\Carely.dll
 D:\GP\Carely.Global\Carely\obj\Debug\net8.0\Carely.pdb
 D:\GP\Carely.Global\Carely\obj\Debug\net8.0\Carely.genruntimeconfig.cache
 D:\GP\Carely.Global\Carely\obj\Debug\net8.0\ref\Carely.dll
+D:\GP\Carely.Global\Carely\obj\Debug\net8.0\Carely.sourcelink.json
+D:\GP\Carely.Global\Carely\bin\Debug\net8.0\BCrypt.Net-Next.dll
+D:\GP\Carely.Global\Carely\bin\Debug\net8.0\FluentValidation.dll
+D:\GP\Carely.Global\Carely\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+D:\GP\Carely.Global\Carely\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+D:\GP\Carely.Global\Carely\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

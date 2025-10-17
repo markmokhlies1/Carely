@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "D:\\GP\\Carely.Global\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{866CD6B0-539E-46AD-A73E-245373DD839E}|Carely\\Carely.csproj|d:\\gp\\carely.global\\carely\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{866CD6B0-539E-46AD-A73E-245373DD839E}|Carely\\Carely.csproj|solutionrelative:carely\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{866CD6B0-539E-46AD-A73E-245373DD839E}|Carely\\Carely.csproj|d:\\gp\\carely.global\\carely\\migrations\\20251016174218_init feature mother_medication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{866CD6B0-539E-46AD-A73E-245373DD839E}|Carely\\Carely.csproj|solutionrelative:carely\\migrations\\20251016174218_init feature mother_medication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{866CD6B0-539E-46AD-A73E-245373DD839E}|Carely\\Carely.csproj|d:\\gp\\carely.global\\carely\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{866CD6B0-539E-46AD-A73E-245373DD839E}|Carely\\Carely.csproj|solutionrelative:carely\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{866CD6B0-539E-46AD-A73E-245373DD839E}|Carely\\Carely.csproj|d:\\gp\\carely.global\\carely\\dtos\\responses\\medication\\medicationresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{866CD6B0-539E-46AD-A73E-245373DD839E}|Carely\\Carely.csproj|solutionrelative:carely\\dtos\\responses\\medication\\medicationresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,40 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\GP\\Carely.Global\\Carely\\appsettings.json",
-              "RelativeDocumentMoniker": "Carely\\appsettings.json",
-              "ToolTip": "D:\\GP\\Carely.Global\\Carely\\appsettings.json",
-              "RelativeToolTip": "Carely\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-16T17:43:18.445Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "20251016174218_init feature mother_medication.cs",
-              "DocumentMoniker": "D:\\GP\\Carely.Global\\Carely\\Migrations\\20251016174218_init feature mother_medication.cs",
-              "RelativeDocumentMoniker": "Carely\\Migrations\\20251016174218_init feature mother_medication.cs",
-              "ToolTip": "D:\\GP\\Carely.Global\\Carely\\Migrations\\20251016174218_init feature mother_medication.cs",
-              "RelativeToolTip": "Carely\\Migrations\\20251016174218_init feature mother_medication.cs",
-              "ViewState": "AgIAAG0AAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Title": "MedicationResponse.cs",
+              "DocumentMoniker": "D:\\GP\\Carely.Global\\Carely\\Dtos\\Responses\\Medication\\MedicationResponse.cs",
+              "RelativeDocumentMoniker": "Carely\\Dtos\\Responses\\Medication\\MedicationResponse.cs",
+              "ToolTip": "D:\\GP\\Carely.Global\\Carely\\Dtos\\Responses\\Medication\\MedicationResponse.cs",
+              "RelativeToolTip": "Carely\\Dtos\\Responses\\Medication\\MedicationResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-16T17:42:19.196Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "D:\\GP\\Carely.Global\\Carely\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "Carely\\Data\\AppDbContext.cs",
-              "ToolTip": "D:\\GP\\Carely.Global\\Carely\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "Carely\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-16T17:41:21.055Z",
+              "WhenOpened": "2025-10-17T13:09:09.227Z",
               "EditorCaption": ""
             }
           ]

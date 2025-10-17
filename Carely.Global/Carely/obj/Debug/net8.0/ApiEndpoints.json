@@ -1,0 +1,44 @@
+[
+  {
+    "ContainingType": "Carely.Controllers.ProfileController",
+    "Method": "Login",
+    "RelativePath": "api/profile/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Carely.Dtos.Requests.Jwt.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.ProfileController",
+    "Method": "Logout",
+    "RelativePath": "api/profile/logout",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.ProfileController",
+    "Method": "RegisterMother",
+    "RelativePath": "api/profile/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Carely.Dtos.Requests.Mother.CreateMotherRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

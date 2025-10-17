@@ -26,7 +26,7 @@ namespace Carely.Data.Configuration
                 .HasMaxLength(50)
                 .IsRequired();
 
-            builder.Property(m => m.Password)
+            builder.Property(m => m.PasswordHash)
                 .HasMaxLength(50)
                 .IsRequired();
 
@@ -64,7 +64,7 @@ namespace Carely.Data.Configuration
                     FirstName = "Sara",
                     LastName = "Khaled",
                     Email = "sara@example.com",
-                    Password = "123456",
+                    PasswordHash = "123456",
                     PhoneNumber = "01112345678",
                     Role = UserRole.Mother,
                     BirthDate = new DateTime(1998, 5, 10),
@@ -77,7 +77,7 @@ namespace Carely.Data.Configuration
                     FirstName = "Nada",
                     LastName = "Mohsen",
                     Email = "nada@example.com",
-                    Password = "654321",
+                    PasswordHash = "654321",
                     PhoneNumber = "01098765432",
                     Role = UserRole.Mother,
                     BirthDate = new DateTime(1995, 7, 15),
@@ -90,7 +90,7 @@ namespace Carely.Data.Configuration
                     FirstName = "Eman",
                     LastName = "Ali",
                     Email = "eman@example.com",
-                    Password = "987654",
+                    PasswordHash = "987654",
                     PhoneNumber = "01234567890",
                     Role = UserRole.Mother,
                     BirthDate = new DateTime(2000, 2, 20),
