@@ -5,8 +5,11 @@ using Carely.Models;
 using Carely.Models.Base;
 using Carely.Models.Enums;
 using Carely.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 
 namespace Carely.Controllers
 {
@@ -86,5 +89,50 @@ namespace Carely.Controllers
             return Ok(new { message = "Logged out successfully" });
         }
 
+        [HttpPut("update")]
+        [Authorize(Roles = "Mother")]
+        public async Task<IActionResult> UpdateProfile([FromBody] UpdateMotherRequest request)
+        {
+            var motherIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value
+                        ?? User.FindFirst(JwtRegisteredClaimNames.Sub)?.Value;
+
+            if (motherIdClaim == null)
+                return Unauthorized(new { message = "Invalid token." });
+
+            if (!int.TryParse(motherIdClaim, out int motherId))
+                return BadRequest(new { message = "Invalid mother ID in token." });
+
+            var mother = await _userRepo.GetMotherByIdAsync(motherId);
+            if (mother == null)
+                return NotFound(new { message = "Mother not found." });
+
+            mother.FirstName = request.FirstName ?? mother.FirstName;
+            mother.LastName = request.LastName ?? mother.LastName;
+            mother.Email = request.Email ?? mother.Email;
+            mother.PhoneNumber = request.PhoneNumber ?? mother.PhoneNumber;
+            mother.BirthDate = request.BirthDate != default ? request.BirthDate : mother.BirthDate;
+            mother.Hight = request.Hight != 0 ? request.Hight : mother.Hight;
+            mother.Weight = request.Weight != 0 ? request.Weight : mother.Weight;
+
+            if (!string.IsNullOrWhiteSpace(request.Password))
+                mother.PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.Password);
+
+            await _userRepo.UpdateMotherAsync(mother);
+
+            return Ok(new
+            {
+                message = "Profile updated successfully",
+                updatedProfile = new
+                {
+                    mother.FirstName,
+                    mother.LastName,
+                    mother.Email,
+                    mother.PhoneNumber,
+                    mother.BirthDate,
+                    mother.Hight,
+                    mother.Weight
+                }
+            });
+        }
     }
 }

@@ -25,6 +25,7 @@ namespace Carely.Services
             var claims = new List<Claim>
         {
             new (JwtRegisteredClaimNames.Sub, request.Id!),
+            new (ClaimTypes.NameIdentifier, request.Id!),
             new (JwtRegisteredClaimNames.Email, request.Email!),
             new (JwtRegisteredClaimNames.FamilyName, request.LastName!),
             new (JwtRegisteredClaimNames.GivenName, request.FirstName!),

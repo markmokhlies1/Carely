@@ -1,5 +1,94 @@
 [
   {
+    "ContainingType": "Carely.Controllers.MedicationsController",
+    "Method": "GetAllForMother",
+    "RelativePath": "api/medications",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.MedicationsController",
+    "Method": "Create",
+    "RelativePath": "api/medications",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Carely.Dtos.Requests.Medication.CreateMedicationRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.MedicationsController",
+    "Method": "GetById",
+    "RelativePath": "api/medications/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.MedicationsController",
+    "Method": "Update",
+    "RelativePath": "api/medications/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "Carely.Dtos.Requests.Medication.UpdateMedicationRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.MedicationsController",
+    "Method": "Delete",
+    "RelativePath": "api/medications/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.MedicationsController",
+    "Method": "GetCountForMother",
+    "RelativePath": "api/medications/count",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Carely.Controllers.ProfileController",
     "Method": "Login",
     "RelativePath": "api/profile/login",
@@ -36,6 +125,22 @@
       {
         "Name": "request",
         "Type": "Carely.Dtos.Requests.Mother.CreateMotherRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.ProfileController",
+    "Method": "UpdateProfile",
+    "RelativePath": "api/profile/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Carely.Dtos.Requests.Mother.UpdateMotherRequest",
         "IsRequired": true
       }
     ],

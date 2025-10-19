@@ -28,8 +28,6 @@ namespace Carely.Data.Configuration
             builder.Property(m => m.Duration)
                    .IsRequired();
 
-            builder.Ignore(m => m.WillEndAt);
-                   
 
             builder.Property(m => m.MedicationType)
                    .IsRequired();

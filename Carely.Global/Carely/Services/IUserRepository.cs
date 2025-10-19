@@ -9,6 +9,8 @@ namespace Carely.Services
         Task<Mother?> GetMotherByEmailAsync(string email);
         Task<Admin?> GetAdminByEmailAsync(string email);
         Task AddMotherAsync(Mother mother);
+        Task<Mother?> GetMotherByIdAsync(int id);
+        Task UpdateMotherAsync(Mother mother);
     }
     public class UserRepository : IUserRepository
     {
@@ -27,6 +29,14 @@ namespace Carely.Services
         public async Task AddMotherAsync(Mother mother)
         {
             await _context.Mothers.AddAsync(mother);
+            await _context.SaveChangesAsync();
+        }
+        public async Task<Mother?> GetMotherByIdAsync(int id)
+        => await _context.Mothers.FirstOrDefaultAsync(m => m.Id == id);
+
+        public async Task UpdateMotherAsync(Mother mother)
+        {
+            _context.Mothers.Update(mother);
             await _context.SaveChangesAsync();
         }
     }

@@ -27,7 +27,7 @@ namespace Carely.Data.Configuration
                 .IsRequired();
 
             builder.Property(m => m.PasswordHash)
-                .HasMaxLength(50)
+                .HasMaxLength(250)
                 .IsRequired();
 
             builder.Property(m => m.PhoneNumber)
@@ -49,8 +49,6 @@ namespace Carely.Data.Configuration
 
             builder.Property(m => m.Weight)
                    .IsRequired();
-
-            builder.Ignore(m => m.Age);
             builder.HasData(LoadData());
         }
 

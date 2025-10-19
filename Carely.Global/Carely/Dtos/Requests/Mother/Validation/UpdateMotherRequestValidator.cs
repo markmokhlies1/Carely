@@ -30,14 +30,17 @@ namespace Carely.Dtos.Requests.Mother.Validation
                 .Matches(@"^\+?\d{10,15}$").WithMessage("Invalid phone number format.");
 
             RuleFor(x => x.BirthDate)
+                .NotEmpty().WithMessage("BirthDate number is required.")
                 .LessThan(DateTime.Today).WithMessage("Birth date must be in the past.")
                 .GreaterThan(DateTime.Today.AddYears(-100)).WithMessage("Invalid birth date.");
 
             RuleFor(x => x.Hight)
+                .NotEmpty().WithMessage("Hight is required.")
                 .GreaterThan(0).WithMessage("Height must be greater than 0 cm.")
                 .LessThan(300).WithMessage("Height seems unrealistic.");
 
             RuleFor(x => x.Weight)
+                .NotEmpty().WithMessage("Weight is required.")
                 .GreaterThan(0).WithMessage("Weight must be greater than 0 kg.")
                 .LessThan(500).WithMessage("Weight seems unrealistic.");
         }
