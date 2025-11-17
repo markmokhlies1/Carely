@@ -162,7 +162,6 @@ D:\GP\Carely.Global\Carely\obj\Debug\net8.0\staticwebassets.build.json
 D:\GP\Carely.Global\Carely\obj\Debug\net8.0\staticwebassets.build.json.cache
 D:\GP\Carely.Global\Carely\obj\Debug\net8.0\staticwebassets.development.json
 D:\GP\Carely.Global\Carely\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-D:\GP\Carely.Global\Carely\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\GP\Carely.Global\Carely\obj\Debug\net8.0\Carely.csproj.Up2Date
 D:\GP\Carely.Global\Carely\obj\Debug\net8.0\Carely.dll
 D:\GP\Carely.Global\Carely\obj\Debug\net8.0\refint\Carely.dll
@@ -175,3 +174,4 @@ D:\GP\Carely.Global\Carely\bin\Debug\net8.0\FluentValidation.dll
 D:\GP\Carely.Global\Carely\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
 D:\GP\Carely.Global\Carely\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
 D:\GP\Carely.Global\Carely\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\GP\Carely.Global\Carely\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

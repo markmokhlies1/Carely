@@ -3,7 +3,7 @@ using Carely.Dtos.Requests.Jwt;
 using Carely.Dtos.Requests.Mother;
 using Carely.Models;
 using Carely.Models.Base;
-using Carely.Models.Enums;
+using Carely.Models.Enums.User;
 using Carely.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;

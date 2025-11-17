@@ -1,5 +1,5 @@
 ﻿using Carely.Models.Base;
-using Carely.Models.Enums;
+using Carely.Models.Enums.Medication;
 
 namespace Carely.Models
 {

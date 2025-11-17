@@ -1,5 +1,5 @@
 ﻿using Carely.Models;
-using Carely.Models.Enums;
+using Carely.Models.Enums.User;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;

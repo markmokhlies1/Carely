@@ -1,5 +1,5 @@
-﻿using Carely.Models.Enums;
-using Carely.Models;
+﻿using Carely.Models;
+using Carely.Models.Enums.Medication;
 
 namespace Carely.Dtos.Responses.Medication
 {

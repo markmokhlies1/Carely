@@ -1,4 +1,4 @@
-﻿using Carely.Models.Enums;
+﻿using Carely.Models.Enums.User;
 namespace Carely.Models.Base
 {
     public abstract class User : Entity
