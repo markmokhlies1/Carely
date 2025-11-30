@@ -9,7 +9,7 @@ namespace Carely.Dtos.Requests.Medication
         public string? Description { get; set; }
         public Spot Spot { get; set; }
         public DateTime StartDate { get; set; }
-        public int Duration { get; set; }
+        public int Duration { get; set; } 
         public MedicationType MedicationType { get; set; }
     }
 }

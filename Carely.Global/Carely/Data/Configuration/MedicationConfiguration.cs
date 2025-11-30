@@ -36,7 +36,7 @@ namespace Carely.Data.Configuration
             builder.HasOne(m => m.Mother)
                    .WithMany(m => m.Medications)
                    .HasForeignKey(m => m.MotherId)
-                   .OnDelete(DeleteBehavior.NoAction);
+                   .OnDelete(DeleteBehavior.Cascade);
 
             builder.HasData(LoadData());
         }

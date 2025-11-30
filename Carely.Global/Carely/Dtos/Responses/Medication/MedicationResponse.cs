@@ -5,6 +5,7 @@ namespace Carely.Dtos.Responses.Medication
 {
     public class MedicationResponse
     {
+        public int Id { get; set; }
         public string? Name { get; set; }
         public string? Description { get; set; }
         public Spot Spot { get; set; }
@@ -17,6 +18,7 @@ namespace Carely.Dtos.Responses.Medication
         {
             return new MedicationResponse
             {
+                Id= medication.Id,
                 Name = medication.Name,
                 Description = medication.Description,
                 Spot = medication.Spot,

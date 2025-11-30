@@ -92,6 +92,185 @@ namespace Carely.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Carely.Models.Clinic", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<int>("DoctorId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DoctorId");
+
+                    b.ToTable("Clinics", (string)null);
+                });
+
+            modelBuilder.Entity("Carely.Models.ClinicWorkTime", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ClinicId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Day")
+                        .HasColumnType("int");
+
+                    b.Property<TimeSpan>("From")
+                        .HasColumnType("time");
+
+                    b.Property<TimeSpan>("To")
+                        .HasColumnType("time");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClinicId");
+
+                    b.ToTable("ClinicWorkTimes", (string)null);
+                });
+
+            modelBuilder.Entity("Carely.Models.Doctor", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Age")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("nvarchar(25)");
+
+                    b.Property<int>("Gender")
+                        .HasColumnType("int");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("nvarchar(25)");
+
+                    b.Property<string>("Link")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PasswordHash")
+                        .IsRequired()
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<int>("Role")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Specification")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Doctors", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Age = 40,
+                            Email = "ahmed.samir@clinic.com",
+                            FirstName = "Ahmed",
+                            Gender = 0,
+                            LastName = "Samir",
+                            Link = "bbbb",
+                            PasswordHash = "Doctor@123",
+                            PhoneNumber = "01033333333",
+                            Role = 2,
+                            Specification = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Age = 35,
+                            Email = "mariam.magdy@clinic.com",
+                            FirstName = "Mariam",
+                            Gender = 1,
+                            LastName = "Magdy",
+                            Link = "gergre",
+                            PasswordHash = "Mariam@123",
+                            PhoneNumber = "01044444444",
+                            Role = 2,
+                            Specification = 0
+                        });
+                });
+
+            modelBuilder.Entity("Carely.Models.Feedback", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Comment")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<int>("MeetingId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MotherId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Stars")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MeetingId");
+
+                    b.HasIndex("MotherId");
+
+                    b.ToTable("Feedbacks", (string)null);
+                });
+
             modelBuilder.Entity("Carely.Models.Medication", b =>
                 {
                     b.Property<int>("Id")
@@ -164,6 +343,38 @@ namespace Carely.Migrations
                             Spot = 0,
                             StartDate = new DateTime(2025, 3, 5, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
+                });
+
+            modelBuilder.Entity("Carely.Models.Meeting", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Address")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<int>("DoctorId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MeetingType")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DoctorId");
+
+                    b.ToTable("Meetings", (string)null);
                 });
 
             modelBuilder.Entity("Carely.Models.Mother", b =>
@@ -257,19 +468,120 @@ namespace Carely.Migrations
                         });
                 });
 
+            modelBuilder.Entity("MeetingMother", b =>
+                {
+                    b.Property<int>("MeetingsId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MothersId")
+                        .HasColumnType("int");
+
+                    b.HasKey("MeetingsId", "MothersId");
+
+                    b.HasIndex("MothersId");
+
+                    b.ToTable("MotherMeetings", (string)null);
+                });
+
+            modelBuilder.Entity("Carely.Models.Clinic", b =>
+                {
+                    b.HasOne("Carely.Models.Doctor", "Doctor")
+                        .WithMany("Clinics")
+                        .HasForeignKey("DoctorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Doctor");
+                });
+
+            modelBuilder.Entity("Carely.Models.ClinicWorkTime", b =>
+                {
+                    b.HasOne("Carely.Models.Clinic", "Clinic")
+                        .WithMany("WorkTimes")
+                        .HasForeignKey("ClinicId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Clinic");
+                });
+
+            modelBuilder.Entity("Carely.Models.Feedback", b =>
+                {
+                    b.HasOne("Carely.Models.Meeting", "Meeting")
+                        .WithMany("Feedbacks")
+                        .HasForeignKey("MeetingId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Carely.Models.Mother", "Mother")
+                        .WithMany("Feedbacks")
+                        .HasForeignKey("MotherId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Meeting");
+
+                    b.Navigation("Mother");
+                });
+
             modelBuilder.Entity("Carely.Models.Medication", b =>
                 {
                     b.HasOne("Carely.Models.Mother", "Mother")
                         .WithMany("Medications")
                         .HasForeignKey("MotherId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Mother");
                 });
 
+            modelBuilder.Entity("Carely.Models.Meeting", b =>
+                {
+                    b.HasOne("Carely.Models.Doctor", "Doctor")
+                        .WithMany("Meetings")
+                        .HasForeignKey("DoctorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Doctor");
+                });
+
+            modelBuilder.Entity("MeetingMother", b =>
+                {
+                    b.HasOne("Carely.Models.Meeting", null)
+                        .WithMany()
+                        .HasForeignKey("MeetingsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Carely.Models.Mother", null)
+                        .WithMany()
+                        .HasForeignKey("MothersId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Carely.Models.Clinic", b =>
+                {
+                    b.Navigation("WorkTimes");
+                });
+
+            modelBuilder.Entity("Carely.Models.Doctor", b =>
+                {
+                    b.Navigation("Clinics");
+
+                    b.Navigation("Meetings");
+                });
+
+            modelBuilder.Entity("Carely.Models.Meeting", b =>
+                {
+                    b.Navigation("Feedbacks");
+                });
+
             modelBuilder.Entity("Carely.Models.Mother", b =>
                 {
+                    b.Navigation("Feedbacks");
+
                     b.Navigation("Medications");
                 });
 #pragma warning restore 612, 618

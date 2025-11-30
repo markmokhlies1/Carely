@@ -106,6 +106,9 @@ namespace Carely
             builder.Services.AddTransient<IJwtTokenProvider, JwtTokenProvider>();
             builder.Services.AddTransient<IUserRepository, UserRepository>();
             builder.Services.AddTransient<IMedicationRepository, MedicationRepository>();
+            builder.Services.AddTransient<IFeedbackRepository, FeedbackRepository>();
+            builder.Services.AddTransient<IClinicRepository,ClinicRepository>();
+            builder.Services.AddTransient<IMeetingRepository, MeetingRepository>();
 
             #endregion
 
@@ -126,6 +129,11 @@ namespace Carely
 
             #region MW
             // Configure the HTTP request pipeline.
+            if (app.Environment.IsDevelopment())
+            {
+                app.UseSwagger();
+                app.UseSwaggerUI();
+            }
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {

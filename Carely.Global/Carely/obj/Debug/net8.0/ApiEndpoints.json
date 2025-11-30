@@ -1,5 +1,152 @@
 [
   {
+    "ContainingType": "Carely.Controllers.ClinicsController",
+    "Method": "AddClinic",
+    "RelativePath": "api/Clinics",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Carely.Dtos.Requests.Clinic.CreateClinicRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.ClinicsController",
+    "Method": "UpdateClinic",
+    "RelativePath": "api/Clinics/{clinicId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "clinicId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "Carely.Dtos.Requests.Clinic.UpdateClinicRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.ClinicsController",
+    "Method": "DeleteClinic",
+    "RelativePath": "api/Clinics/{clinicId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "clinicId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.ClinicsController",
+    "Method": "GetById",
+    "RelativePath": "api/Clinics/{clinicId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "clinicId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.ClinicsController",
+    "Method": "GetDoctorClinics",
+    "RelativePath": "api/Clinics/doctor/{doctorId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "doctorId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.ClinicsController",
+    "Method": "GetClinicsForLoggedInDoctor",
+    "RelativePath": "api/Clinics/my-clinics",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.DoctorsController",
+    "Method": "GetAll",
+    "RelativePath": "api/doctors",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.DoctorsController",
+    "Method": "GetById",
+    "RelativePath": "api/doctors/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.DoctorsController",
+    "Method": "Delete",
+    "RelativePath": "api/doctors/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.DoctorsController",
+    "Method": "GetDoctorsCount",
+    "RelativePath": "api/doctors/count",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Carely.Controllers.MedicationsController",
     "Method": "GetAllForMother",
     "RelativePath": "api/medications",
@@ -89,6 +236,411 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Carely.Controllers.MeetingsController",
+    "Method": "AddMeeting",
+    "RelativePath": "api/meetings",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Carely.Dtos.Requests.Meeting.CreateMeetingRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.MeetingsController",
+    "Method": "UpdateMeeting",
+    "RelativePath": "api/meetings/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "Carely.Dtos.Requests.Meeting.UpdateMeetingRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.MeetingsController",
+    "Method": "DeleteMeeting",
+    "RelativePath": "api/meetings/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.MeetingsController",
+    "Method": "GetById",
+    "RelativePath": "api/meetings/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.MeetingsController",
+    "Method": "AddFeedback",
+    "RelativePath": "api/meetings/{meetingId}/feedback",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "meetingId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "Carely.Dtos.Requests.Feedback.CreateFeedbackRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.MeetingsController",
+    "Method": "GetMeetingFeedbacks",
+    "RelativePath": "api/meetings/{meetingId}/feedbacks",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "meetingId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.MeetingsController",
+    "Method": "GetFeedbackCount",
+    "RelativePath": "api/meetings/{meetingId}/feedbacks/count",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "meetingId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.MeetingsController",
+    "Method": "GetRegisteredMothers",
+    "RelativePath": "api/meetings/{meetingId}/mothers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "meetingId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.MeetingsController",
+    "Method": "GetRegisteredMotherCount",
+    "RelativePath": "api/meetings/{meetingId}/mothers/count",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "meetingId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.MeetingsController",
+    "Method": "Register",
+    "RelativePath": "api/meetings/{meetingId}/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "meetingId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.MeetingsController",
+    "Method": "Unregister",
+    "RelativePath": "api/meetings/{meetingId}/unregister",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "meetingId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.MeetingsController",
+    "Method": "GetTotalMeetingsCount",
+    "RelativePath": "api/meetings/count",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.MeetingsController",
+    "Method": "GetEndedMeetingsCount",
+    "RelativePath": "api/meetings/count/ended",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.MeetingsController",
+    "Method": "GetUpcomingMeetingsCount",
+    "RelativePath": "api/meetings/count/upcoming",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.MeetingsController",
+    "Method": "GetDoctorEndedMeetings",
+    "RelativePath": "api/meetings/doctor/my-meetings/ended",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.MeetingsController",
+    "Method": "GetDoctorMeetingsEndedCount",
+    "RelativePath": "api/meetings/doctor/my-meetings/ended/count",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.MeetingsController",
+    "Method": "GetDoctorUpcomingMeetings",
+    "RelativePath": "api/meetings/doctor/my-meetings/upcoming",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.MeetingsController",
+    "Method": "GetDoctorMeetingsUpcomingCount",
+    "RelativePath": "api/meetings/doctor/my-meetings/upcoming/count",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.MeetingsController",
+    "Method": "GetEnded",
+    "RelativePath": "api/meetings/ended",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.MeetingsController",
+    "Method": "UpdateFeedbackById",
+    "RelativePath": "api/meetings/feedback/{feedbackId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "feedbackId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "Carely.Dtos.Requests.Feedback.UpdateFeedbackRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.MeetingsController",
+    "Method": "DeleteFeedbackById",
+    "RelativePath": "api/meetings/feedback/{feedbackId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "feedbackId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.MeetingsController",
+    "Method": "GetMyEndedMeetings",
+    "RelativePath": "api/meetings/mother/my-meetings/ended",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.MeetingsController",
+    "Method": "GetMyMeetingsEndedCount",
+    "RelativePath": "api/meetings/mother/my-meetings/ended/count",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.MeetingsController",
+    "Method": "GetMyUpcomingMeetings",
+    "RelativePath": "api/meetings/mother/my-meetings/upcoming",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.MeetingsController",
+    "Method": "GetMyMeetingsUpcommingCount",
+    "RelativePath": "api/meetings/mother/my-meetings/upcoming/count",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.MeetingsController",
+    "Method": "GetUpcoming",
+    "RelativePath": "api/meetings/upcoming",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.MothersController",
+    "Method": "GetAll",
+    "RelativePath": "api/mothers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.MothersController",
+    "Method": "GetById",
+    "RelativePath": "api/mothers/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.MothersController",
+    "Method": "Delete",
+    "RelativePath": "api/mothers/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.MothersController",
+    "Method": "GetMothersCount",
+    "RelativePath": "api/mothers/count",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Carely.Controllers.ProfileController",
     "Method": "Login",
     "RelativePath": "api/profile/login",
@@ -116,6 +668,16 @@
   },
   {
     "ContainingType": "Carely.Controllers.ProfileController",
+    "Method": "GetProfile",
+    "RelativePath": "api/profile/me",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.ProfileController",
     "Method": "RegisterMother",
     "RelativePath": "api/profile/register",
     "HttpMethod": "POST",
@@ -132,6 +694,22 @@
   },
   {
     "ContainingType": "Carely.Controllers.ProfileController",
+    "Method": "RegisterDoctor",
+    "RelativePath": "api/profile/register-doctor",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Carely.Dtos.Requests.Doctor.CreateDoctorRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.ProfileController",
     "Method": "UpdateProfile",
     "RelativePath": "api/profile/update",
     "HttpMethod": "PUT",
@@ -141,6 +719,22 @@
       {
         "Name": "request",
         "Type": "Carely.Dtos.Requests.Mother.UpdateMotherRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.ProfileController",
+    "Method": "UpdateDoctorProfile",
+    "RelativePath": "api/profile/update-doctor",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Carely.Dtos.Requests.Doctor.UpdateDoctorRequest",
         "IsRequired": true
       }
     ],

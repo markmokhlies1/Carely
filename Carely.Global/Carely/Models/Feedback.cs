@@ -10,5 +10,5 @@ namespace Carely.Models
         public Mother? Mother { get; set; }
         public int MeetingId { get; set; }
         public Meeting? Meeting { get; set; }
-    }
+    }  
 }

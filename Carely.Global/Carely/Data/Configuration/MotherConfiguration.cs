@@ -6,8 +6,8 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Carely.Data.Configuration
 {
-    public class MotherConfiguration : IEntityTypeConfiguration<Mother>
-    {
+    public class MotherConfiguration : IEntityTypeConfiguration<Mother> 
+    { 
         public void Configure(EntityTypeBuilder<Mother> builder)
         {
             builder.ToTable("Mothers");
@@ -49,6 +49,16 @@ namespace Carely.Data.Configuration
 
             builder.Property(m => m.Weight)
                    .IsRequired();
+
+            builder.HasMany(m => m.Meetings)
+               .WithMany(me => me.Mothers)
+               .UsingEntity(j => j.ToTable("MotherMeetings"));
+
+            builder.HasMany(m => m.Feedbacks)
+                   .WithOne(f => f.Mother)
+                   .HasForeignKey(f => f.MotherId)
+                   .OnDelete(DeleteBehavior.Cascade);
+
             builder.HasData(LoadData());
         }
 

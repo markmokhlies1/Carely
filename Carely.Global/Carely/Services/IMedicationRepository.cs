@@ -14,7 +14,7 @@ namespace Carely.Services
         Task<int> GetCountForMotherAsync(int motherId);
     }
     public class MedicationRepository : IMedicationRepository
-    {
+    { 
         private readonly AppDbContext _context;
 
         public MedicationRepository(AppDbContext context)

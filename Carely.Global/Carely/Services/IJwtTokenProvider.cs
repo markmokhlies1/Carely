@@ -1,5 +1,5 @@
 ﻿using Carely.Dtos.Requests.Jwt;
-using Carely.Dtos.Responses;
+using Carely.Dtos.Responses.Jwt;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -20,7 +20,7 @@ namespace Carely.Services
             var issuer = jwtSettings["Issuer"]!;
             var audience = jwtSettings["Audience"]!;
             var key = jwtSettings["SecretKey"]!;
-            var expires = DateTime.UtcNow.AddMinutes(int.Parse(jwtSettings["TokenExpirationInMinutes"]!));
+            var expires = DateTime.Now.AddMinutes(int.Parse(jwtSettings["TokenExpirationInMinutes"]!));
 
             var claims = new List<Claim>
         {

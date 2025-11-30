@@ -1,4 +1,4 @@
-﻿namespace Carely.Dtos.Responses
+﻿namespace Carely.Dtos.Responses.Jwt
 {
     public class TokenResponse
     {
