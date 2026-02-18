@@ -71,48 +71,21 @@ namespace Carely.Controllers
 
         #region Update Clinic
 
-        [HttpPut("{clinicId}")]
+        [HttpPut("{clinicId}")] 
         [Authorize(Roles = "Doctor")]
         public async Task<IActionResult> UpdateClinic(int clinicId, [FromBody] UpdateClinicRequest request)
         {
+
             var doctorIdClaim = User.FindFirstValue(ClaimTypes.NameIdentifier)
-             ?? User.FindFirstValue(JwtRegisteredClaimNames.Sub);
+            ?? User.FindFirstValue(JwtRegisteredClaimNames.Sub);
 
             if (doctorIdClaim == null)
-                return Unauthorized(new { message = "Invalid token." });
+                return Unauthorized();
 
             if (!int.TryParse(doctorIdClaim, out int doctorId))
-                return BadRequest(new { message = "Invalid doctor ID in token." });
+                return BadRequest();
 
-            var clinic = await _clinicRepo.GetClinicByIdAsync(clinicId);
-
-            if (clinic == null)
-                return NotFound(new { message = "Clinic not found" });
-
-            if (clinic.DoctorId != doctorId)
-                return Unauthorized(new { message = "You can update only your own clinics" });
-
-            clinic.Name = request.Name ?? clinic.Name;
-            clinic.Address = request.Address ?? clinic.Address;
-            clinic.City = request.City ?? clinic.City;
-            clinic.PhoneNumber = request.PhoneNumber ?? clinic.PhoneNumber;
-
-            if (request.WorkTimes != null)
-            {
-                foreach (var updateWt in request.WorkTimes)
-                {
-                    var existingWt = clinic.WorkTimes
-                        .FirstOrDefault(w => w.Day == updateWt.Day);
-
-                    if (existingWt != null)
-                    {
-                        existingWt.From = updateWt.From ?? existingWt.From;
-                        existingWt.To = updateWt.To ?? existingWt.To;
-                    }
-                }
-            }
-
-            await _clinicRepo.UpdateClinicAsync(clinic);
+            await _clinicRepo.UpdateClinicAsync(clinicId, doctorId, request);
 
             return Ok(new { message = "Clinic updated successfully" });
         }

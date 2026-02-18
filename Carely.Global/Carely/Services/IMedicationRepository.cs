@@ -44,6 +44,7 @@ namespace Carely.Services
                 .ToListAsync();
         }
 
+
         public async Task UpdateAsync(Medication medication)
         {
             _context.Medications.Update(medication);

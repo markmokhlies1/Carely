@@ -8,6 +8,7 @@
         public DateTime Date { get; set; }
         public string? Address { get; set; }
         public int DoctorId { get; set; }
+        public string DoctorName { get; set; } = string.Empty;
 
         public static MeetingResponse FromEntity(Models.Meeting meeting)
         {
@@ -18,7 +19,8 @@
                 MeetingType = meeting.MeetingType.ToString(),
                 Date = meeting.Date,
                 Address = meeting.Address,
-                DoctorId = meeting.DoctorId
+                DoctorId = meeting.DoctorId,
+                DoctorName = $"{meeting.Doctor?.FirstName} {meeting.Doctor?.LastName}".Trim(),
             };
         }
     }

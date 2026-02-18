@@ -12,3 +12,4 @@ namespace Carely.Dtos.Requests.Medication
         public MedicationType MedicationType { get; set; }
     }
 }
+ 

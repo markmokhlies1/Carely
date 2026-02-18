@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "E9Ba/58ynMk=",
+  "success": true,
+  "projectFilePath": "D:\\GP\\Carely.Global\\ConsoleApp1\\ConsoleApp1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\LENOVO\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

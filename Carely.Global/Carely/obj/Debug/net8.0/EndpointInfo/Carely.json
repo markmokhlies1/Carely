@@ -499,6 +499,30 @@
         }
       }
     },
+    "/api/meetings/upcomingmother": {
+      "get": {
+        "tags": [
+          "Meetings"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/meetings/endedmother": {
+      "get": {
+        "tags": [
+          "Meetings"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/meetings/count": {
       "get": {
         "tags": [

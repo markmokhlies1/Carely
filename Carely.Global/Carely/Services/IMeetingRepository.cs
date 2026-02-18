@@ -31,6 +31,8 @@ namespace Carely.Services
         Task<int> GetDoctorUpcomingCountAsync(int doctorId);
         Task<int> GetDoctorEndedCountAsync(int doctorId);
 
+        Task<HashSet<int>> GetRegisteredMeetingIdsAsync(int motherId);
+
 
     }
     public class MeetingRepository : IMeetingRepository
@@ -62,7 +64,7 @@ namespace Carely.Services
         public async Task<Meeting?> GetByIdAsync(int id)
         {
             return await _context.Meetings
-                .Include(m => m.Mothers)
+                .Include(m => m.Doctor)
                 .AsNoTracking()
                 .FirstOrDefaultAsync(m => m.Id == id);
         }
@@ -70,18 +72,18 @@ namespace Carely.Services
         public async Task<List<Meeting>> GetUpcomingAsync()
         {
             return await _context.Meetings
+                .Include(m => m.Doctor)
                 .Where(m => m.Date > DateTime.Now)
                 .OrderBy(m => m.Date)
-                .AsNoTracking()
                 .ToListAsync();
         }
 
         public async Task<List<Meeting>> GetEndedAsync()
         {
             return await _context.Meetings
+                .Include (m => m.Doctor)
                 .Where(m => m.Date < DateTime.Now)
                 .OrderByDescending(m => m.Date)
-                .AsNoTracking()
                 .ToListAsync();
         }
 
@@ -182,6 +184,7 @@ namespace Carely.Services
         public async Task<List<Meeting>> GetMotherUpcomingMeetingsAsync(int motherId)
         {
             return await _context.Meetings
+             .Include(m => m.Doctor)
             .Where(m => m.Date > DateTime.Now &&
                     m.Mothers.Any(mm => mm.Id == motherId))
             .OrderBy(m => m.Date)
@@ -191,6 +194,7 @@ namespace Carely.Services
         public async Task<List<Meeting>> GetMotherEndedMeetingsAsync(int motherId)
         {
             return await _context.Meetings
+                .Include(m => m.Doctor)
             .Where(m => m.Date <= DateTime.Now &&
                     m.Mothers.Any(mm => mm.Id == motherId))
             .OrderByDescending(m => m.Date)
@@ -213,6 +217,7 @@ namespace Carely.Services
         public async Task<List<Meeting>> GetDoctorUpcomingMeetingsAsync(int doctorId)
         {
             return await _context.Meetings
+                .Include(m => m.Doctor)
                 .Where(m => m.Date > DateTime.Now &&
                             m.DoctorId == doctorId)
                 .OrderBy(m => m.Date)
@@ -221,6 +226,7 @@ namespace Carely.Services
         public async Task<List<Meeting>> GetDoctorEndedMeetingsAsync(int doctorId)
         {
             return await _context.Meetings
+                .Include(m => m.Doctor)
                 .Where(m => m.Date <= DateTime.Now &&
                             m.DoctorId == doctorId)
                 .OrderByDescending(m => m.Date)
@@ -237,6 +243,15 @@ namespace Carely.Services
             return await _context.Meetings
                 .CountAsync(m => m.Date <= DateTime.Now &&
                                  m.DoctorId == doctorId);
+        }
+
+
+        public async Task<HashSet<int>> GetRegisteredMeetingIdsAsync(int motherId)
+        {
+            return await _context.Meetings
+                .Where(m => m.Mothers.Any(x => x.Id == motherId))
+                .Select(m => m.Id)
+                .ToHashSetAsync();
         }
 
     }

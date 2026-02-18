@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RHcIFEB8cic=",
+  "dgSpecHash": "Ze/OARh5VG0=",
   "success": true,
-  "projectFilePath": "D:\\GP\\Carely.Global\\Carely\\Carely.csproj",
+  "projectFilePath": "D:\\CollegeProject\\GP\\Carely.Global\\Carely\\Carely.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LENOVO\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

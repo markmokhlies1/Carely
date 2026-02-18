@@ -8,12 +8,13 @@ using Carely.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 
 namespace Carely.Controllers
 {
-    [Route("api/meetings")] 
+    [Route("api/meetings")]  
     [ApiController]
     public class MeetingsController : ControllerBase
     {
@@ -103,26 +104,81 @@ namespace Carely.Controllers
         }
         #endregion
 
-        #region Get Upcoming Meeting in all system
+        #region Get Upcoming Meeting in all system by Admin
         [HttpGet("upcoming")]
-        [Authorize(Roles = "Mother,Admin")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetUpcoming()
         {
             var meetings = await _meetingRepo.GetUpcomingAsync();
+            
 
             return Ok(meetings.Select(MeetingResponse.FromEntity));
         }
         #endregion
 
-        #region Get Ended Meeting in all system
+        #region Get Ended Meeting in all system by Admin
         [HttpGet("ended")]
-        [Authorize(Roles = "Mother,Admin")]
+        [Authorize(Roles = "Admin")]
 
         public async Task<IActionResult> GetEnded()
         {
             var meetings = await _meetingRepo.GetEndedAsync();
 
             return Ok(meetings.Select(MeetingResponse.FromEntity));
+        }
+        #endregion
+
+        #region Get upcoming Meeting in all system by Mother
+        [HttpGet("upcomingmother")]
+        [Authorize(Roles = "Mother")]
+        public async Task<IActionResult> GetUpcomingForMother()
+        {
+            var meetings = await _meetingRepo.GetUpcomingAsync();
+            var motherIdClaim = User.FindFirstValue(ClaimTypes.NameIdentifier)
+             ?? User.FindFirstValue(JwtRegisteredClaimNames.Sub);
+
+            if (motherIdClaim == null)
+                return Unauthorized(new { message = "Invalid token." });
+
+            if (!int.TryParse(motherIdClaim, out int motherId))
+                return BadRequest(new { message = "Invalid mother ID in token." });
+
+            var registeredIds =
+                await _meetingRepo.GetRegisteredMeetingIdsAsync(motherId);
+
+            var result = meetings.Select(m =>
+                MotherMeetingResponse.FromEntity(
+                    m,
+                    registeredIds.Contains(m.Id)));
+
+            return Ok(result);
+        }
+        #endregion
+
+        #region Get Ended Meeting in all system by Mother
+        [HttpGet("endedmother")]
+        [Authorize(Roles = "Mother")]
+        public async Task<IActionResult> GetEndedForMother()
+        {
+            var meetings = await _meetingRepo.GetEndedAsync();
+            var motherIdClaim = User.FindFirstValue(ClaimTypes.NameIdentifier)
+             ?? User.FindFirstValue(JwtRegisteredClaimNames.Sub);
+
+            if (motherIdClaim == null)
+                return Unauthorized(new { message = "Invalid token." });
+
+            if (!int.TryParse(motherIdClaim, out int motherId))
+                return BadRequest(new { message = "Invalid mother ID in token." });
+
+            var registeredIds =
+                await _meetingRepo.GetRegisteredMeetingIdsAsync(motherId);
+
+            var result = meetings.Select(m =>
+                MotherMeetingResponse.FromEntity(
+                    m,
+                    registeredIds.Contains(m.Id)));
+
+            return Ok(result);
         }
         #endregion
 

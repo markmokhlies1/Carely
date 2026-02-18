@@ -12,10 +12,11 @@ namespace Carely.Controllers
 {
     [Route("api/medications")]
     [Authorize(Roles = "Mother")]
+
     [ApiController] 
     public class MedicationsController : ControllerBase 
     {
-        private readonly IMedicationRepository _medicationRepo;
+        private readonly IMedicationRepository _medicationRepo; 
         private readonly IUserRepository _userRepo;
 
         public MedicationsController(IMedicationRepository medicationRepo, IUserRepository userRepo)
@@ -120,6 +121,14 @@ namespace Carely.Controllers
 
             if (medication.MotherId != motherId)
                 return Forbid();
+
+            if (request.StartDate != medication.StartDate)
+            {
+                if (request.StartDate < DateTime.Today)
+                {
+                    return BadRequest(new { message = "Start date cannot be more than 10 days in the past." });
+                }
+            }
 
             medication.Name = request.Name;
             medication.Description = request.Description;

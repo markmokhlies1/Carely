@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GP\\Carely.Global\\Carely\\Carely.csproj": {}
+    "D:\\CollegeProject\\GP\\Carely.Global\\Carely\\Carely.csproj": {}
   },
   "projects": {
-    "D:\\GP\\Carely.Global\\Carely\\Carely.csproj": {
+    "D:\\CollegeProject\\GP\\Carely.Global\\Carely\\Carely.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GP\\Carely.Global\\Carely\\Carely.csproj",
+        "projectUniqueName": "D:\\CollegeProject\\GP\\Carely.Global\\Carely\\Carely.csproj",
         "projectName": "Carely",
-        "projectPath": "D:\\GP\\Carely.Global\\Carely\\Carely.csproj",
+        "projectPath": "D:\\CollegeProject\\GP\\Carely.Global\\Carely\\Carely.csproj",
         "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-        "outputPath": "D:\\GP\\Carely.Global\\Carely\\obj\\",
+        "outputPath": "D:\\CollegeProject\\GP\\Carely.Global\\Carely\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -102,7 +102,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

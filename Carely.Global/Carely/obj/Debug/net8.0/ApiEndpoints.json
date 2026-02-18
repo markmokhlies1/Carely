@@ -503,6 +503,16 @@
   },
   {
     "ContainingType": "Carely.Controllers.MeetingsController",
+    "Method": "GetEndedForMother",
+    "RelativePath": "api/meetings/endedmother",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.MeetingsController",
     "Method": "UpdateFeedbackById",
     "RelativePath": "api/meetings/feedback/{feedbackId}",
     "HttpMethod": "PUT",
@@ -582,6 +592,16 @@
     "ContainingType": "Carely.Controllers.MeetingsController",
     "Method": "GetUpcoming",
     "RelativePath": "api/meetings/upcoming",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.MeetingsController",
+    "Method": "GetUpcomingForMother",
+    "RelativePath": "api/meetings/upcomingmother",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

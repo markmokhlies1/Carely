@@ -17,7 +17,7 @@ namespace Carely.Services
     {
         private readonly AppDbContext _context;
 
-        public FeedbackRepository(AppDbContext context)
+        public FeedbackRepository(AppDbContext context) 
         {
             _context = context;
         }
@@ -36,6 +36,7 @@ namespace Carely.Services
         public async Task<List<Feedback>> GetFeedbacksForMeetingAsync(int meetingId)
         {
             return await _context.Feedbacks
+                .Include(f => f.Mother)
                 .Where(f => f.MeetingId == meetingId)
                 .ToListAsync();
         }
