@@ -1,0 +1,8 @@
+﻿# Ignore Visual Studio junk
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.log
+*.db
