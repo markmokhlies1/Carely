@@ -1060,6 +1060,19 @@
           "buildTransitive/Mono.TextTemplating.targets": {}
         }
       },
+      "MQTTnet/4.3.2.930": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/MQTTnet.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/MQTTnet.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Swashbuckle.AspNetCore/9.0.6": {
         "type": "package",
         "dependencies": {
@@ -3718,6 +3731,41 @@
         "readme.md"
       ]
     },
+    "MQTTnet/4.3.2.930": {
+      "sha512": "PyNF0qgG+VkY30T6p8ljnw6SBmS23slmvwK0k8JqL4z1oSYr3VI0j4Mslx6hzp7QFWNeoZHV1U9mq6/sWUaMTQ==",
+      "type": "package",
+      "path": "mqttnet/4.3.2.930",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net452/MQTTnet.dll",
+        "lib/net452/MQTTnet.xml",
+        "lib/net461/MQTTnet.dll",
+        "lib/net461/MQTTnet.xml",
+        "lib/net48/MQTTnet.dll",
+        "lib/net48/MQTTnet.xml",
+        "lib/net5.0/MQTTnet.dll",
+        "lib/net5.0/MQTTnet.xml",
+        "lib/net6.0/MQTTnet.dll",
+        "lib/net6.0/MQTTnet.xml",
+        "lib/net7.0/MQTTnet.dll",
+        "lib/net7.0/MQTTnet.xml",
+        "lib/netcoreapp3.1/MQTTnet.dll",
+        "lib/netcoreapp3.1/MQTTnet.xml",
+        "lib/netstandard1.3/MQTTnet.dll",
+        "lib/netstandard1.3/MQTTnet.xml",
+        "lib/netstandard2.0/MQTTnet.dll",
+        "lib/netstandard2.0/MQTTnet.xml",
+        "lib/netstandard2.1/MQTTnet.dll",
+        "lib/netstandard2.1/MQTTnet.xml",
+        "lib/uap10.0.10240/MQTTnet.dll",
+        "lib/uap10.0.10240/MQTTnet.pri",
+        "lib/uap10.0.10240/MQTTnet.xml",
+        "mqttnet.4.3.2.930.nupkg.sha512",
+        "mqttnet.nuspec",
+        "nuget.png"
+      ]
+    },
     "Swashbuckle.AspNetCore/9.0.6": {
       "sha512": "q/UfEAgrk6qQyjHXgsW9ILw0YZLfmPtWUY4wYijliX6supozC+TkzU0G6FTnn/dPYxnChjM8g8lHjWHF6VKy+A==",
       "type": "package",
@@ -4825,6 +4873,7 @@
     "net8.0": [
       "BCrypt.Net-Next >= 4.0.3",
       "FluentValidation.AspNetCore >= 11.3.0",
+      "MQTTnet >= 4.3.2",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 8.0.19",
       "Microsoft.EntityFrameworkCore.Design >= 9.0.10",
       "Microsoft.EntityFrameworkCore.SqlServer >= 9.0.10",
@@ -4833,23 +4882,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\LENOVO\\.nuget\\packages\\": {},
+    "C:\\Users\\ACER\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\CollegeProject\\GP\\Carely.Global\\Carely\\Carely.csproj",
+      "projectUniqueName": "C:\\Users\\ACER\\OneDrive\\Desktop\\Carely\\Carely\\Carely.Global\\Carely\\Carely.csproj",
       "projectName": "Carely",
-      "projectPath": "D:\\CollegeProject\\GP\\Carely.Global\\Carely\\Carely.csproj",
-      "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-      "outputPath": "D:\\CollegeProject\\GP\\Carely.Global\\Carely\\obj\\",
+      "projectPath": "C:\\Users\\ACER\\OneDrive\\Desktop\\Carely\\Carely\\Carely.Global\\Carely\\Carely.csproj",
+      "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ACER\\OneDrive\\Desktop\\Carely\\Carely\\Carely.Global\\Carely\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4889,6 +4938,10 @@
           "FluentValidation.AspNetCore": {
             "target": "Package",
             "version": "[11.3.0, )"
+          },
+          "MQTTnet": {
+            "target": "Package",
+            "version": "[4.3.2, )"
           },
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",
@@ -4934,8 +4987,20 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.313/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Carely depends on MQTTnet (>= 4.3.2) but MQTTnet 4.3.2 was not found. MQTTnet 4.3.2.930 was resolved instead.",
+      "libraryId": "MQTTnet",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

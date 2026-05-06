@@ -6457,23 +6457,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\LENOVO\\.nuget\\packages\\": {},
+    "C:\\Users\\ACER\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\CollegeProject\\GP\\Carely.Global\\Carely\\Carely.csproj",
+      "projectUniqueName": "C:\\Users\\ACER\\OneDrive\\Desktop\\Carely\\Carely\\Carely.Global\\Carely\\Carely.csproj",
       "projectName": "Carely",
-      "projectPath": "D:\\CollegeProject\\GP\\Carely.Global\\Carely\\Carely.csproj",
-      "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-      "outputPath": "D:\\CollegeProject\\GP\\Carely.Global\\Carely\\obj\\publish\\win-x86\\",
+      "projectPath": "C:\\Users\\ACER\\OneDrive\\Desktop\\Carely\\Carely\\Carely.Global\\Carely\\Carely.csproj",
+      "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ACER\\OneDrive\\Desktop\\Carely\\Carely\\Carely.Global\\Carely\\obj\\publish\\win-x86\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

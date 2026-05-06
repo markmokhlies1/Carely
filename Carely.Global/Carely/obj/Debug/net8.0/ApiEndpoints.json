@@ -1,5 +1,206 @@
 [
   {
+    "ContainingType": "Carely.Controllers.BabiesController",
+    "Method": "Create",
+    "RelativePath": "api/Babies",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Carely.Dtos.Requests.Baby.CreateBabyRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.BabiesController",
+    "Method": "GetAllForMother",
+    "RelativePath": "api/Babies",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.BabiesController",
+    "Method": "UpdateBaby",
+    "RelativePath": "api/Babies/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "Carely.Dtos.Requests.Baby.UpdateBabyRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.BabiesController",
+    "Method": "Delete",
+    "RelativePath": "api/Babies/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BabyVaccinationsController",
+    "Method": "GetAll",
+    "RelativePath": "api/BabyVaccinations/{babyId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "babyId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BabyVaccinationsController",
+    "Method": "Check",
+    "RelativePath": "api/BabyVaccinations/{babyId}/{vaccinationId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "babyId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "vaccinationId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BabyVaccinationsController",
+    "Method": "Uncheck",
+    "RelativePath": "api/BabyVaccinations/{babyId}/{vaccinationId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "babyId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "vaccinationId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BabyVaccinationsController",
+    "Method": "GetChecked",
+    "RelativePath": "api/BabyVaccinations/{babyId}/checked",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "babyId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BabyVaccinationsController",
+    "Method": "GetLate",
+    "RelativePath": "api/BabyVaccinations/{babyId}/late",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "babyId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BabyVaccinationsController",
+    "Method": "GetSummary",
+    "RelativePath": "api/BabyVaccinations/{babyId}/summary",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "babyId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BabyVaccinationsController",
+    "Method": "GetUnchecked",
+    "RelativePath": "api/BabyVaccinations/{babyId}/unchecked",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "babyId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BabyVaccinationsController",
+    "Method": "GetUpcoming",
+    "RelativePath": "api/BabyVaccinations/{babyId}/upcoming",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "babyId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Carely.Controllers.ClinicsController",
     "Method": "AddClinic",
     "RelativePath": "api/Clinics",
@@ -140,6 +341,115 @@
     "ContainingType": "Carely.Controllers.DoctorsController",
     "Method": "GetDoctorsCount",
     "RelativePath": "api/doctors/count",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.LullabyController",
+    "Method": "AddLullaby",
+    "RelativePath": "api/Lullabies",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Duration",
+        "Type": "System.TimeSpan",
+        "IsRequired": false
+      },
+      {
+        "Name": "AudioFile",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.LullabyController",
+    "Method": "GetAll",
+    "RelativePath": "api/Lullabies",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.LullabyController",
+    "Method": "UpdateLullaby",
+    "RelativePath": "api/Lullabies/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Duration",
+        "Type": "System.Nullable\u00601[[System.TimeSpan, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "AudioFile",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.LullabyController",
+    "Method": "GetById",
+    "RelativePath": "api/Lullabies/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.LullabyController",
+    "Method": "DeleteLullaby",
+    "RelativePath": "api/Lullabies/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.LullabyController",
+    "Method": "GetCount",
+    "RelativePath": "api/Lullabies/count",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -609,6 +919,70 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Carely.Controllers.MotherLullabyUsageController",
+    "Method": "GetLullabyUsageSummary",
+    "RelativePath": "api/MotherLullabyUsage/lullaby/{lullabyId}/summary",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "lullabyId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.MotherLullabyUsageController",
+    "Method": "Play",
+    "RelativePath": "api/MotherLullabyUsage/play",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Carely.Dtos.Requests.Lullaby.PlayCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.MotherLullabyUsageController",
+    "Method": "Stop",
+    "RelativePath": "api/MotherLullabyUsage/stop",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Carely.Dtos.Requests.Lullaby.StopCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.MotherLullabyUsageController",
+    "Method": "SetVolume",
+    "RelativePath": "api/MotherLullabyUsage/volume",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Carely.Dtos.Requests.Lullaby.VolumeCommandRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Carely.Controllers.MothersController",
     "Method": "GetAll",
     "RelativePath": "api/mothers",
@@ -755,6 +1129,32 @@
       {
         "Name": "request",
         "Type": "Carely.Dtos.Requests.Doctor.UpdateDoctorRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.VaccinationsController",
+    "Method": "GetAll",
+    "RelativePath": "api/Vaccinations",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Carely.Controllers.VaccinationsController",
+    "Method": "GetById",
+    "RelativePath": "api/Vaccinations/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],

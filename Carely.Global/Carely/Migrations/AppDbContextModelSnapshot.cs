@@ -92,6 +92,72 @@ namespace Carely.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Carely.Models.Baby", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("DateOfBirth")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Developmental")
+                        .HasColumnType("int");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("nvarchar(25)");
+
+                    b.Property<int>("Gender")
+                        .HasColumnType("int");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("nvarchar(25)");
+
+                    b.Property<int>("MotherId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Weight")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MotherId");
+
+                    b.ToTable("Babies", (string)null);
+                });
+
+            modelBuilder.Entity("Carely.Models.BabyVaccination", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("BabyId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Checkbox")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("VaccinationId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BabyId");
+
+                    b.HasIndex("VaccinationId");
+
+                    b.ToTable("BabyVaccination", (string)null);
+                });
+
             modelBuilder.Entity("Carely.Models.Clinic", b =>
                 {
                     b.Property<int>("Id")
@@ -271,6 +337,57 @@ namespace Carely.Migrations
                     b.ToTable("Feedbacks", (string)null);
                 });
 
+            modelBuilder.Entity("Carely.Models.Lullaby", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<TimeSpan>("Duration")
+                        .HasColumnType("time");
+
+                    b.Property<string>("FilePath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<TimeSpan?>("LastPosition")
+                        .HasColumnType("time");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Lullabies", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Duration = new TimeSpan(0, 0, 2, 18, 0),
+                            FilePath = "audio/lullabies/forest.mp3",
+                            Name = "forest lullaby"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Duration = new TimeSpan(0, 0, 1, 16, 0),
+                            FilePath = "audio/lullabies/sleeping.mp3",
+                            Name = "sleeping lullaby"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Duration = new TimeSpan(0, 0, 4, 20, 0),
+                            FilePath = "audio/lullabies/silentvoice.mp3",
+                            Name = "silentvoice lullaby"
+                        });
+                });
+
             modelBuilder.Entity("Carely.Models.Medication", b =>
                 {
                     b.Property<int>("Id")
@@ -425,46 +542,266 @@ namespace Carely.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Mothers", (string)null);
+                });
+
+            modelBuilder.Entity("Carely.Models.MotherLullabyUsage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("IsPlaying")
+                        .HasColumnType("bit");
+
+                    b.Property<TimeSpan?>("LastPosition")
+                        .HasColumnType("time");
+
+                    b.Property<int>("LullabyId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MotherId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PlayCount")
+                        .HasColumnType("int");
+
+                    b.Property<int>("VolumeLevel")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("LullabyId");
+
+                    b.HasIndex("MotherId");
+
+                    b.ToTable("MotherLullabyUsages", (string)null);
 
                     b.HasData(
                         new
                         {
                             Id = 1,
-                            BirthDate = new DateTime(1998, 5, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "sara@example.com",
-                            FirstName = "Sara",
-                            Hight = 165,
-                            LastName = "Khaled",
-                            PasswordHash = "123456",
-                            PhoneNumber = "01112345678",
-                            Role = 0,
-                            Weight = 62
+                            IsPlaying = false,
+                            LastPosition = new TimeSpan(0, 0, 0, 30, 0),
+                            LullabyId = 1,
+                            MotherId = 2,
+                            PlayCount = 5,
+                            VolumeLevel = 50
                         },
                         new
                         {
                             Id = 2,
-                            BirthDate = new DateTime(1995, 7, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "nada@example.com",
-                            FirstName = "Nada",
-                            Hight = 160,
-                            LastName = "Mohsen",
-                            PasswordHash = "654321",
-                            PhoneNumber = "01098765432",
-                            Role = 0,
-                            Weight = 58
+                            IsPlaying = false,
+                            LastPosition = new TimeSpan(0, 0, 0, 45, 0),
+                            LullabyId = 2,
+                            MotherId = 3,
+                            PlayCount = 3,
+                            VolumeLevel = 50
                         },
                         new
                         {
                             Id = 3,
-                            BirthDate = new DateTime(2000, 2, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "eman@example.com",
-                            FirstName = "Eman",
-                            Hight = 170,
-                            LastName = "Ali",
-                            PasswordHash = "987654",
-                            PhoneNumber = "01234567890",
-                            Role = 0,
-                            Weight = 70
+                            IsPlaying = false,
+                            LastPosition = new TimeSpan(0, 0, 1, 0, 0),
+                            LullabyId = 3,
+                            MotherId = 4,
+                            PlayCount = 7,
+                            VolumeLevel = 50
+                        },
+                        new
+                        {
+                            Id = 4,
+                            IsPlaying = false,
+                            LastPosition = new TimeSpan(0, 0, 0, 20, 0),
+                            LullabyId = 1,
+                            MotherId = 15,
+                            PlayCount = 4,
+                            VolumeLevel = 50
+                        },
+                        new
+                        {
+                            Id = 5,
+                            IsPlaying = false,
+                            LastPosition = new TimeSpan(0, 0, 0, 50, 0),
+                            LullabyId = 2,
+                            MotherId = 16,
+                            PlayCount = 6,
+                            VolumeLevel = 50
+                        });
+                });
+
+            modelBuilder.Entity("Carely.Models.Vaccination", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Age")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Disease")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Dosage")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Vaccinations", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Age = 0,
+                            Disease = "Hepatitis B",
+                            Dosage = 0,
+                            Name = "Liver B infant"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Age = 0,
+                            Disease = "Polio",
+                            Dosage = 1,
+                            Name = "Sabine"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Age = 0,
+                            Disease = "Tuberculosis",
+                            Dosage = 2,
+                            Name = "BCG"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Age = 2,
+                            Disease = "Polio",
+                            Dosage = 3,
+                            Name = "Sabine"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Age = 2,
+                            Disease = "Diphtheria, pertussis, tetanus, hepatitis B and influenzae influenzae Hemorrhagic TypeB",
+                            Dosage = 3,
+                            Name = "The taste of the pentagram"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Age = 2,
+                            Disease = "Paralyzed polio",
+                            Dosage = 3,
+                            Name = "Salk's Taste"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Age = 4,
+                            Disease = "Polio",
+                            Dosage = 4,
+                            Name = "Sabine"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Age = 4,
+                            Disease = "Diphtheria, whooping cough, tetanus, hepatitis B and haemorrhagic influenzae StyleB",
+                            Dosage = 4,
+                            Name = "The taste of the pentagram"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Age = 4,
+                            Disease = "Paralyzed polio",
+                            Dosage = 4,
+                            Name = "Taste of Soulk"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Age = 6,
+                            Disease = "Polio",
+                            Dosage = 5,
+                            Name = "Sabine"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Age = 6,
+                            Disease = "Diphtheria, pertussis, tetanus, hepatitis B and influenzae influenzae Hemorrhagic TypeB",
+                            Dosage = 5,
+                            Name = "The taste of the pentagram"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Age = 6,
+                            Disease = "Paralyzed polio",
+                            Dosage = 5,
+                            Name = "Taste of Soulk"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Age = 9,
+                            Disease = "Polio",
+                            Dosage = 6,
+                            Name = "Sabine"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Age = 12,
+                            Disease = "Polio",
+                            Dosage = 7,
+                            Name = "Sabine"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Age = 12,
+                            Disease = "Measles, mumps and rubella",
+                            Dosage = 8,
+                            Name = "Viral MMR"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Age = 18,
+                            Disease = "Polio",
+                            Dosage = 8,
+                            Name = "Sabine"
+                        },
+                        new
+                        {
+                            Id = 17,
+                            Age = 18,
+                            Disease = "Measles, mumps and rubella",
+                            Dosage = 8,
+                            Name = "Viral MMR"
+                        },
+                        new
+                        {
+                            Id = 18,
+                            Age = 18,
+                            Disease = "Diphtheria, tetanus, and whooping cough",
+                            Dosage = 8,
+                            Name = "Bacterial triad"
                         });
                 });
 
@@ -481,6 +818,36 @@ namespace Carely.Migrations
                     b.HasIndex("MothersId");
 
                     b.ToTable("MotherMeetings", (string)null);
+                });
+
+            modelBuilder.Entity("Carely.Models.Baby", b =>
+                {
+                    b.HasOne("Carely.Models.Mother", "Mother")
+                        .WithMany("Babies")
+                        .HasForeignKey("MotherId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Mother");
+                });
+
+            modelBuilder.Entity("Carely.Models.BabyVaccination", b =>
+                {
+                    b.HasOne("Carely.Models.Baby", "Baby")
+                        .WithMany("BabyUsage")
+                        .HasForeignKey("BabyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Carely.Models.Vaccination", "Vaccination")
+                        .WithMany("VaccinationUsage")
+                        .HasForeignKey("VaccinationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Baby");
+
+                    b.Navigation("Vaccination");
                 });
 
             modelBuilder.Entity("Carely.Models.Clinic", b =>
@@ -546,6 +913,25 @@ namespace Carely.Migrations
                     b.Navigation("Doctor");
                 });
 
+            modelBuilder.Entity("Carely.Models.MotherLullabyUsage", b =>
+                {
+                    b.HasOne("Carely.Models.Lullaby", "Lullaby")
+                        .WithMany("MotherUsages")
+                        .HasForeignKey("LullabyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Carely.Models.Mother", "Mother")
+                        .WithMany("LullabyUsages")
+                        .HasForeignKey("MotherId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Lullaby");
+
+                    b.Navigation("Mother");
+                });
+
             modelBuilder.Entity("MeetingMother", b =>
                 {
                     b.HasOne("Carely.Models.Meeting", null)
@@ -561,6 +947,11 @@ namespace Carely.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Carely.Models.Baby", b =>
+                {
+                    b.Navigation("BabyUsage");
+                });
+
             modelBuilder.Entity("Carely.Models.Clinic", b =>
                 {
                     b.Navigation("WorkTimes");
@@ -573,6 +964,11 @@ namespace Carely.Migrations
                     b.Navigation("Meetings");
                 });
 
+            modelBuilder.Entity("Carely.Models.Lullaby", b =>
+                {
+                    b.Navigation("MotherUsages");
+                });
+
             modelBuilder.Entity("Carely.Models.Meeting", b =>
                 {
                     b.Navigation("Feedbacks");
@@ -580,9 +976,18 @@ namespace Carely.Migrations
 
             modelBuilder.Entity("Carely.Models.Mother", b =>
                 {
+                    b.Navigation("Babies");
+
                     b.Navigation("Feedbacks");
 
+                    b.Navigation("LullabyUsages");
+
                     b.Navigation("Medications");
+                });
+
+            modelBuilder.Entity("Carely.Models.Vaccination", b =>
+                {
+                    b.Navigation("VaccinationUsage");
                 });
 #pragma warning restore 612, 618
         }

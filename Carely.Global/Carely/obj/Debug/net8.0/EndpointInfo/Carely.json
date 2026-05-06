@@ -5,6 +5,310 @@
     "version": "v1"
   },
   "paths": {
+    "/api/Babies": {
+      "post": {
+        "tags": [
+          "Babies"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateBabyRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateBabyRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateBabyRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Babies"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Babies/{id}": {
+      "put": {
+        "tags": [
+          "Babies"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateBabyRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateBabyRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateBabyRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Babies"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/BabyVaccinations/{babyId}": {
+      "get": {
+        "tags": [
+          "BabyVaccinations"
+        ],
+        "parameters": [
+          {
+            "name": "babyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/BabyVaccinations/{babyId}/checked": {
+      "get": {
+        "tags": [
+          "BabyVaccinations"
+        ],
+        "parameters": [
+          {
+            "name": "babyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/BabyVaccinations/{babyId}/unchecked": {
+      "get": {
+        "tags": [
+          "BabyVaccinations"
+        ],
+        "parameters": [
+          {
+            "name": "babyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/BabyVaccinations/{babyId}/upcoming": {
+      "get": {
+        "tags": [
+          "BabyVaccinations"
+        ],
+        "parameters": [
+          {
+            "name": "babyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/BabyVaccinations/{babyId}/late": {
+      "get": {
+        "tags": [
+          "BabyVaccinations"
+        ],
+        "parameters": [
+          {
+            "name": "babyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/BabyVaccinations/{babyId}/summary": {
+      "get": {
+        "tags": [
+          "BabyVaccinations"
+        ],
+        "parameters": [
+          {
+            "name": "babyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/BabyVaccinations/{babyId}/{vaccinationId}": {
+      "post": {
+        "tags": [
+          "BabyVaccinations"
+        ],
+        "parameters": [
+          {
+            "name": "babyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "vaccinationId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "BabyVaccinations"
+        ],
+        "parameters": [
+          {
+            "name": "babyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "vaccinationId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Clinics": {
       "post": {
         "tags": [
@@ -215,6 +519,176 @@
       "get": {
         "tags": [
           "Doctors"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Lullabies": {
+      "post": {
+        "tags": [
+          "Lullaby"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "AudioFile",
+                  "Duration",
+                  "Name"
+                ],
+                "type": "object",
+                "properties": {
+                  "Name": {
+                    "type": "string"
+                  },
+                  "Duration": {
+                    "type": "string",
+                    "format": "date-span"
+                  },
+                  "AudioFile": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "Name": {
+                  "style": "form"
+                },
+                "Duration": {
+                  "style": "form"
+                },
+                "AudioFile": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Lullaby"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Lullabies/{id}": {
+      "put": {
+        "tags": [
+          "Lullaby"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Name": {
+                    "type": "string"
+                  },
+                  "Duration": {
+                    "type": "string",
+                    "format": "date-span"
+                  },
+                  "AudioFile": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "Name": {
+                  "style": "form"
+                },
+                "Duration": {
+                  "style": "form"
+                },
+                "AudioFile": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Lullaby"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Lullaby"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Lullabies/count": {
+      "get": {
+        "tags": [
+          "Lullaby"
         ],
         "responses": {
           "200": {
@@ -898,6 +1372,122 @@
         }
       }
     },
+    "/api/MotherLullabyUsage/lullaby/{lullabyId}/summary": {
+      "get": {
+        "tags": [
+          "MotherLullabyUsage"
+        ],
+        "parameters": [
+          {
+            "name": "lullabyId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/MotherLullabyUsage/play": {
+      "post": {
+        "tags": [
+          "MotherLullabyUsage"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PlayCommandRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PlayCommandRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PlayCommandRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/MotherLullabyUsage/stop": {
+      "post": {
+        "tags": [
+          "MotherLullabyUsage"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StopCommandRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StopCommandRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/StopCommandRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/MotherLullabyUsage/volume": {
+      "post": {
+        "tags": [
+          "MotherLullabyUsage"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VolumeCommandRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VolumeCommandRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/VolumeCommandRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/mothers": {
       "get": {
         "tags": [
@@ -1144,10 +1734,81 @@
           }
         }
       }
+    },
+    "/api/Vaccinations": {
+      "get": {
+        "tags": [
+          "Vaccinations"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Vaccinations/{id}": {
+      "get": {
+        "tags": [
+          "Vaccinations"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
+      "Baby_Gender": {
+        "enum": [
+          0,
+          1
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "CreateBabyRequest": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "gender": {
+            "$ref": "#/components/schemas/Baby_Gender"
+          },
+          "weight": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dateOfBirth": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "developmental": {
+            "$ref": "#/components/schemas/Developmental"
+          }
+        },
+        "additionalProperties": false
+      },
       "CreateClinicRequest": {
         "type": "object",
         "properties": {
@@ -1352,6 +2013,17 @@
         "type": "integer",
         "format": "int32"
       },
+      "Developmental": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
       "Gender": {
         "enum": [
           0,
@@ -1394,6 +2066,16 @@
         "type": "integer",
         "format": "int32"
       },
+      "PlayCommandRequest": {
+        "type": "object",
+        "properties": {
+          "lullabyId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
       "Specification": {
         "enum": [
           0,
@@ -1414,6 +2096,44 @@
         ],
         "type": "integer",
         "format": "int32"
+      },
+      "StopCommandRequest": {
+        "type": "object",
+        "properties": {
+          "lullabyId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateBabyRequest": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "gender": {
+            "$ref": "#/components/schemas/Baby_Gender"
+          },
+          "weight": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dateOfBirth": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "developmental": {
+            "$ref": "#/components/schemas/Developmental"
+          }
+        },
+        "additionalProperties": false
       },
       "UpdateClinicRequest": {
         "type": "object",
@@ -1597,6 +2317,20 @@
             "format": "int32"
           },
           "weight": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "VolumeCommandRequest": {
+        "type": "object",
+        "properties": {
+          "lullabyId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "level": {
             "type": "integer",
             "format": "int32"
           }

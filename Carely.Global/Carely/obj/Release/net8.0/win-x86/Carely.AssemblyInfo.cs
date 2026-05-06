@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Carely")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+71f5e4d601bd25668da25614beaca68179985c58")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+74f91fd23db31dfb5e0eac0bfa3021e037fafa75")]
 [assembly: System.Reflection.AssemblyProductAttribute("Carely")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Carely")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

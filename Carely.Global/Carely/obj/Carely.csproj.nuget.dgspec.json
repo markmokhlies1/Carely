@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\CollegeProject\\GP\\Carely.Global\\Carely\\Carely.csproj": {}
+    "C:\\Users\\ACER\\OneDrive\\Desktop\\Carely\\Carely\\Carely.Global\\Carely\\Carely.csproj": {}
   },
   "projects": {
-    "D:\\CollegeProject\\GP\\Carely.Global\\Carely\\Carely.csproj": {
+    "C:\\Users\\ACER\\OneDrive\\Desktop\\Carely\\Carely\\Carely.Global\\Carely\\Carely.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CollegeProject\\GP\\Carely.Global\\Carely\\Carely.csproj",
+        "projectUniqueName": "C:\\Users\\ACER\\OneDrive\\Desktop\\Carely\\Carely\\Carely.Global\\Carely\\Carely.csproj",
         "projectName": "Carely",
-        "projectPath": "D:\\CollegeProject\\GP\\Carely.Global\\Carely\\Carely.csproj",
-        "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-        "outputPath": "D:\\CollegeProject\\GP\\Carely.Global\\Carely\\obj\\",
+        "projectPath": "C:\\Users\\ACER\\OneDrive\\Desktop\\Carely\\Carely\\Carely.Global\\Carely\\Carely.csproj",
+        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ACER\\OneDrive\\Desktop\\Carely\\Carely\\Carely.Global\\Carely\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -57,6 +57,10 @@
             "FluentValidation.AspNetCore": {
               "target": "Package",
               "version": "[11.3.0, )"
+            },
+            "MQTTnet": {
+              "target": "Package",
+              "version": "[4.3.2, )"
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
@@ -102,7 +106,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.313/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

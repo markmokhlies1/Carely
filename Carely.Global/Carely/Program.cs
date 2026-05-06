@@ -109,9 +109,20 @@ namespace Carely
             builder.Services.AddTransient<IFeedbackRepository, FeedbackRepository>();
             builder.Services.AddTransient<IClinicRepository,ClinicRepository>();
             builder.Services.AddTransient<IMeetingRepository, MeetingRepository>();
+            builder.Services.AddTransient<ILullabyRepository, LullabyRepository>();
+            builder.Services.AddScoped<IMotherLullabyUsageRepository, MotherLullabyUsageRepository>();
+           builder.Services.AddTransient<IBabyRepository, BabyRepository>();
+            builder.Services.AddTransient<IVaccinationRepository, VaccinationRepository>();
+            builder.Services.AddTransient<IBabyVaccinationRepository, BabyVaccinationRepository>();
+
+
 
             #endregion
 
+            #endregion
+
+            #region
+            builder.Services.AddSingleton<MqttService>();
             #endregion
 
             #region DuiltIn
@@ -136,6 +147,8 @@ namespace Carely
             //}
 
             app.UseSwagger();
+
+
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
@@ -146,11 +159,19 @@ namespace Carely
 
             app.UseAuthorization();
 
+            //static audio files
+            app.UseStaticFiles();
 
             app.MapControllers();
 
             app.Run();
             #endregion
+
+            //#region audio
+            //app.UseStaticFiles();
+            //#endregion
+
+
         }
     }
 }

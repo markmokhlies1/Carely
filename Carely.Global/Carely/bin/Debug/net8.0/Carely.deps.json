@@ -10,6 +10,7 @@
         "dependencies": {
           "BCrypt.Net-Next": "4.0.3",
           "FluentValidation.AspNetCore": "11.3.0",
+          "MQTTnet": "4.3.2.930",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.19",
           "Microsoft.EntityFrameworkCore.Design": "9.0.10",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.10",
@@ -799,6 +800,14 @@
           }
         }
       },
+      "MQTTnet/4.3.2.930": {
+        "runtime": {
+          "lib/net7.0/MQTTnet.dll": {
+            "assemblyVersion": "4.3.2.930",
+            "fileVersion": "4.3.2.930"
+          }
+        }
+      },
       "Swashbuckle.AspNetCore/9.0.6": {
         "dependencies": {
           "Microsoft.Extensions.ApiDescription.Server": "8.0.0",
@@ -1469,6 +1478,13 @@
       "sha512": "sha512-YqueG52R/Xej4VVbKuRIodjiAhV0HR/XVbLbNrJhCZnzjnSjgMJ/dCdV0akQQxavX6hp/LC6rqLGLcXeQYU7XA==",
       "path": "mono.texttemplating/3.0.0",
       "hashPath": "mono.texttemplating.3.0.0.nupkg.sha512"
+    },
+    "MQTTnet/4.3.2.930": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-PyNF0qgG+VkY30T6p8ljnw6SBmS23slmvwK0k8JqL4z1oSYr3VI0j4Mslx6hzp7QFWNeoZHV1U9mq6/sWUaMTQ==",
+      "path": "mqttnet/4.3.2.930",
+      "hashPath": "mqttnet.4.3.2.930.nupkg.sha512"
     },
     "Swashbuckle.AspNetCore/9.0.6": {
       "type": "package",
