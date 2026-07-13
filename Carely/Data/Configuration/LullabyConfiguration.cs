@@ -28,17 +28,14 @@ namespace Carely.Data.Configuration
             builder.Property(l => l.FilePath)
                    .IsRequired();
 
-            //builder.HasOne(l => l.Mother)
-            //       .WithMany(m => m.Lullabies)
-            //       .HasForeignKey(l => l.MotherId)
-            //       .OnDelete(DeleteBehavior.Cascade);\
+
 
             builder.HasMany(l => l.MotherUsages)
                 .WithOne(mu => mu.Lullaby)
                 .HasForeignKey(mu => mu.LullabyId)
                 .OnDelete(DeleteBehavior.Cascade);
- 
-            
+
+
             builder.HasData(LoadData());
         }
 
@@ -49,26 +46,26 @@ namespace Carely.Data.Configuration
             new Lullaby
             {
                 Id = 1,
-                Name = "bells",
-                Duration = TimeSpan.FromMinutes(2).Add(TimeSpan.FromSeconds(7)),
-                FilePath = "audio/lullabies/bells.mp3",
-                //MotherId = 1
+                Name = "forest lullaby",
+                Duration = TimeSpan.FromMinutes(2).Add(TimeSpan.FromSeconds(18)),
+                FilePath = "audio/lullabies/forest.mp3",
+
             },
             new Lullaby
             {
                 Id = 2,
-                Name = "sleeping",
+                Name = "sleeping lullaby",
                 Duration = TimeSpan.FromMinutes(1).Add(TimeSpan.FromSeconds(16)),
                 FilePath = "audio/lullabies/sleeping.mp3",
-                //MotherId = 2
+
             },
             new Lullaby
             {
                 Id = 3,
-                Name = "whale",
-                Duration = TimeSpan.FromMinutes(3).Add(TimeSpan.FromSeconds(58)),
-                FilePath = "audio/lullabies/whale.mp3",
-                //MotherId = 3
+                Name = "silentvoice lullaby",
+                Duration = TimeSpan.FromMinutes(4).Add(TimeSpan.FromSeconds(20)),
+                FilePath = "audio/lullabies/silentvoice.mp3",
+
             }
         };
         }

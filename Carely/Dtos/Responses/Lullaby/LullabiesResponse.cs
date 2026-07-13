@@ -22,8 +22,7 @@ namespace Carely.Dtos.Responses.Lullaby
                 Name = lullaby.Name,
                 Duration = lullaby.Duration,
                 LastPosition = lullaby.LastPosition,
-                AudioUrl = $"/api/Lullabies/{lullaby.Id}/play"
-
+                AudioUrl = lullaby.FilePath
             };
 
        

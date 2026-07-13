@@ -13,7 +13,6 @@ namespace Carely.Models
 
         public ICollection<MotherLullabyUsage> MotherUsages { get; set; } = new List<MotherLullabyUsage>();
 
-        //public int MotherId { get; set; }
-        //public Mother? Mother { get; set; }
+      
     }
 }

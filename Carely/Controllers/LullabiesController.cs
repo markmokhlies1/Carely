@@ -1,5 +1,4 @@
 ﻿using Carely.Dtos.Requests.Lullaby;
-using Carely.Dtos.Requests.Meeting;
 using Carely.Dtos.Responses.Lullaby;
 using Carely.Models;
 using Carely.Services;
@@ -83,17 +82,17 @@ namespace Carely.Controllers
             if (lullaby == null)
                 return NotFound(new { message = "Lullaby not found" });
 
-            // Update fields if provided
+           
             if (!string.IsNullOrEmpty(dto.Name))
                 lullaby.Name = dto.Name;
 
             if (dto.Duration.HasValue)
                 lullaby.Duration = dto.Duration.Value;
 
-            // Handle audio file replacement
+           
             if (dto.AudioFile != null)
             {
-                // Step 1: Delete old file if it exists
+             
                 if (!string.IsNullOrEmpty(lullaby.FilePath))
                 {
                     var oldPath = Path.Combine("wwwroot", lullaby.FilePath.TrimStart('/'));
@@ -103,7 +102,7 @@ namespace Carely.Controllers
                     }
                 }
 
-                // Step 2: Save new file
+              
                 var uploadsFolder = Path.Combine("wwwroot", "audio", "lullabies");
                 Directory.CreateDirectory(uploadsFolder);
 
@@ -174,17 +173,17 @@ namespace Carely.Controllers
             if (lullaby == null)
                 return NotFound(new { message = "Lullaby not found" });
 
-            // Step 1: Delete the audio file from wwwroot if it exists
+            
             if (!string.IsNullOrEmpty(lullaby.FilePath))
             {
-                var filePath =Path.Combine("wwwroot" , lullaby.FilePath.TrimStart('/'));
+                var filePath = Path.Combine("wwwroot", lullaby.FilePath.TrimStart('/'));
 
                 if (System.IO.File.Exists(filePath))
                 {
                     System.IO.File.Delete(filePath);
                 }
             }
-            // Step 2: Remove the record from the database
+           
             await _repository.DeleteAsync(lullaby);
 
             return NoContent(); // 204 response, standard for successful delete

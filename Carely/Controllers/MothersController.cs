@@ -3,6 +3,9 @@ using Carely.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
+using System.Text.Json;
+using Carely.Dtos.Requests.Mother;
 
 namespace Carely.Controllers
 {
@@ -66,6 +69,32 @@ namespace Carely.Controllers
             var count = await _userRepo.GetMothersCountAsync();
 
             return Ok(count);
+        }
+        #endregion
+
+        #region Device Token
+        [HttpPost("device-token")]
+        [Authorize(Roles = "Mother")]
+        public async Task<IActionResult> UpdateDeviceToken(
+           [FromBody] UpdateDeviceTokenRequest request)
+        {
+            var motherIdClaim = User.FindFirstValue(ClaimTypes.NameIdentifier)
+                ?? User.FindFirstValue(System.IdentityModel.Tokens.Jwt.JwtRegisteredClaimNames.Sub);
+
+            if (motherIdClaim == null)
+                return Unauthorized(new { message = "Invalid token." });
+
+            if (!int.TryParse(motherIdClaim, out int motherId))
+                return BadRequest(new { message = "Invalid mother ID in token." });
+
+            var mother = await _userRepo.GetMotherByIdAsync(motherId);
+            if (mother == null)
+                return NotFound(new { message = "Mother not found." });
+
+            mother.DeviceToken = request.DeviceToken;
+            await _userRepo.UpdateMotherAsync(mother);
+
+            return Ok(new { message = "Device token updated successfully." });
         }
         #endregion
 

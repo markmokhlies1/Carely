@@ -6,12 +6,8 @@ namespace Carely.Dtos.Requests.Lullaby
     {
         [Required]
         public required string Name { get; set; }
-
-
         [Required]
         public required TimeSpan Duration { get; set; }
-        
-
         [Required]
         public required IFormFile AudioFile { get; set; }
     }

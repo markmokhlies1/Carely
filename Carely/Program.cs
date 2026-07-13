@@ -111,12 +111,26 @@ namespace Carely
             builder.Services.AddTransient<IMeetingRepository, MeetingRepository>();
             builder.Services.AddTransient<ILullabyRepository, LullabyRepository>();
             builder.Services.AddScoped<IMotherLullabyUsageRepository, MotherLullabyUsageRepository>();
+           builder.Services.AddTransient<IBabyRepository, BabyRepository>();
+            builder.Services.AddTransient<IVaccinationRepository, VaccinationRepository>();
+            builder.Services.AddTransient<IBabyVaccinationRepository, BabyVaccinationRepository>();
 
+            builder.Services.AddTransient<IDetectionSessionRepository, DetectionSessionRepository>();
 
+            builder.Services.AddTransient<ICryDetectionResultRepository, CryDetectionRepository>();
 
+            builder.Services.AddHttpClient();
+
+            builder.Services.AddSingleton<IFcmService, FcmService>();
+
+            builder.Services.AddHostedService<VaccinationReminderService>();
 
             #endregion
 
+            #endregion
+
+            #region
+            builder.Services.AddSingleton<MqttService>();
             #endregion
 
             #region DuiltIn
@@ -153,15 +167,17 @@ namespace Carely
 
             app.UseAuthorization();
 
+            //static audio files
+            app.UseStaticFiles();
 
             app.MapControllers();
 
             app.Run();
             #endregion
 
-            #region audio
-            app.UseStaticFiles();
-            #endregion
+            //#region audio
+            //app.UseStaticFiles();
+            //#endregion
 
 
         }

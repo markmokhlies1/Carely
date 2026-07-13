@@ -1,0 +1,9 @@
+﻿**/firebase-adminsdk.json
+bin/
+obj/
+**/bin/
+**/obj/
+.vs/
+*.user
+**/*.user
+**/PublishProfiles/*.pubxml.user

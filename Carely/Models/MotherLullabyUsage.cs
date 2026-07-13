@@ -14,6 +14,10 @@ namespace Carely.Models
 
        
         public TimeSpan? LastPosition { get; set; }
+
+        public bool IsPlaying { get; set; }
+
+        public int VolumeLevel { get; set; } = 50;
     }
 }
 

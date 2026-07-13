@@ -42,7 +42,7 @@ namespace Carely.Services
         {
             return await _context.Lullabies
                 .Include(l => l.MotherUsages)
-                .ThenInclude(mu => mu.Mother) 
+                .ThenInclude(mu => mu.Mother)
                 .FirstOrDefaultAsync(l => l.Id == id);
         }
         public async Task<IEnumerable<Lullaby>> GetAllAsync()
@@ -56,13 +56,15 @@ namespace Carely.Services
         }
 
 
-        public async Task<int> GetCountAsync() { 
+        public async Task<int> GetCountAsync()
+        {
             return await _context.Lullabies.CountAsync();
         }
 
-        public async Task DeleteAsync(Lullaby lullaby) {
+        public async Task DeleteAsync(Lullaby lullaby)
+        {
             _context.Lullabies.Remove(lullaby);
-            await _context.SaveChangesAsync(); 
+            await _context.SaveChangesAsync();
         }
 
     }
